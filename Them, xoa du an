@@ -1,0 +1,54 @@
+
+    // Them du an tai vi tri cho truoc
+    void them(){
+        if(n>=199){
+            cout << "\nDanh sach da day, khong the them!\n";
+            return; 
+        }
+        int viTri; 
+
+        cout << "\nNhap vi tri muon them (1 - " << n + 1 << "): "; 
+        cin >> viTri; 
+
+        if(viTri<1 || viTri>n+1){ 
+            cout << "Vi tri khong hop le!\n";
+            return; 
+        }
+
+        // Dich cac phan tu sang phai
+        for(int i=n; i>=viTri; i--){
+            ds[i]=ds[i-1];
+        } 
+        cout << "\n===== NHAP DU AN MOI =====\n";
+        ds[viTri-1].nhap();
+        n++;
+
+        cout << "\nDa them du an thanh cong!\n";
+    }
+  
+    // Xoa du an tai vi tri cho truoc
+    void xoa(){
+        if(n==0){
+            cout << "\nDanh sach rong, khong the xoa!\n";
+            return;
+        }
+
+        int viTri;
+
+        cout << "\nNhap vi tri muon xoa (1 - " << n << "): ";
+        cin >> viTri;
+
+        if(viTri<1 || viTri>n){
+            cout << "Vi tri khong hop le!\n";
+            return;
+        }
+
+        for(int i=viTri-1; i<n-1; i++){
+            ds[i]=ds[i+1];
+        }
+        n--;
+
+        cout << "\nDa xoa du an thanh cong!\n";
+    }
+};
+

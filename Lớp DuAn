@@ -1,0 +1,70 @@
+// Lop va thuoc tinh cua du an (Nhu)
+class DuAn
+{
+private:
+    string maDuAn;
+    string tenDuAn;
+    string tenKhachHang;
+    string ngayBatDau;
+    string ngayKetThuc;
+    long long nganSach;
+    double tyLeHoanThanh;
+
+public:
+    // Nhap thong tin mot du an
+    void nhap()
+    {
+        cin.ignore();
+
+        cout << "Ma du an: ";
+        getline(cin, maDuAn);
+
+        cout << "Ten du an: ";
+        getline(cin, tenDuAn);
+
+        cout << "Ten khach hang: ";
+        getline(cin, tenKhachHang);
+
+        cout << "Ngay bat dau: ";
+        getline(cin, ngayBatDau);
+
+        cout << "Ngay ket thuc du kien: ";
+        getline(cin, ngayKetThuc);
+
+        cout << "Ngan sach: ";
+        cin >> nganSach;
+
+        cout << "Ty le hoan thanh(%): ";
+        cin >> tyLeHoanThanh;
+    }
+
+    // Xuat thong tin mot du an
+    void xuat()
+    {
+        cout << "Ma du an: " << maDuAn << endl;
+        cout << "Ten du an: " << tenDuAn << endl;
+        cout << "Ten khach hang: " << tenKhachHang << endl;
+        cout << "Ngay bat dau: " << ngayBatDau << endl;
+        cout << "Ngay ket thuc du kien: " << ngayKetThuc << endl;
+        cout << "Ngan sach: " << nganSach << endl;
+        cout << "Ty le hoan thanh: " << tyLeHoanThanh << "%" << endl;
+    }
+
+    // Lay ma du an
+    string getMaDuAn()
+    {
+        return maDuAn;
+    }
+
+    // Lay ten du an
+    string getTenDuAn()
+    {
+        return tenDuAn;
+    }
+
+    // Lay ngan sach
+    long long getNganSach()
+    {
+        return nganSach;
+    }
+};

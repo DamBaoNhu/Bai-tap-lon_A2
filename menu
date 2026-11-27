@@ -1,0 +1,15 @@
+//Menu
+void menu()
+{
+    cout << "\n========== QUAN LY DU AN PHAN MEM ==========\n";
+    cout << "1. Nhap danh sach du an\n";
+    cout << "2. In danh sach du an\n";
+    cout << "3. Sap xep theo ngan sach giam dan\n";
+    cout << "4. Tim kiem theo ma du an\n";
+    cout << "5. Tim kiem theo ten du an\n";
+    cout << "6. Bo sung du an tai vi tri cho truoc\n";
+    cout << "7. Xoa du an tai vi tri cho truoc\n";
+    cout << "0. Thoat chuong trinh\n";
+    cout << "===========================================\n";
+    cout << "Nhap lua chon cua ban: ";
+}

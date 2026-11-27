@@ -1,0 +1,28 @@
+// Tim kiem theo ma du an
+void timKiemTheoMa()
+{
+    if (n == 0)
+    {
+        cout << "\nDanh sach rong!\n";
+        return;
+    }
+    string tuKhoa;
+
+    cin.ignore();
+
+    cout << "\nNhap ma du an can tim: ";
+    getline(cin, tuKhoa);
+
+    bool timThay = false;
+
+    for (int i=0; i<n; i++){
+        if (ds[i].getMaDuAn() == tuKhoa){
+            cout << "\n===== DU AN TIM THAY =====\n";
+            ds[i].xuat();
+            timThay = true;
+        }
+    }
+    if (!timThay){
+        cout << "\nKhong tim thay du an!\n";
+    }
+}

@@ -1,0 +1,116 @@
+#include <iostream> 
+#include <string>
+using namespace std; 
+
+// Lop va thuoc tinh cua du an 
+class DuAn{
+private: 
+    string maDuAn; 
+    string tenDuAn;
+    string tenKhachHang;
+    string ngayBatDau;
+    string ngayKetThuc;
+    long long nganSach; 
+    double tyLeHoanThanh;
+
+public:
+ DuAn(){
+ maDuAn=tenDuAn=tenKhachHang=ngayBatDau=ngayKetThuc= ""; 
+    nganSach=0; 
+    tyLeHoanThanh=0;
+ }
+  
+ // Lay ma du an
+    string getMaDuAn(){
+        return maDuAn; 
+    }
+
+    // Lay ten du an
+    string getTenDuAn()
+    {
+        return tenDuAn;
+    }
+
+    // Lay ngan sach
+    long long getNganSach()
+    {
+        return nganSach;
+    } 
+    // Nhap thong tin mot du an
+    void nhap(){
+        cin.ignore(); 
+
+        cout << "Ma du an: ";
+        getline(cin, maDuAn); 
+
+        cout << "Ten du an: ";
+        getline(cin, tenDuAn);
+
+        cout << "Ten khach hang: ";
+        getline(cin, tenKhachHang);
+
+        cout << "Ngay bat dau: ";
+        getline(cin, ngayBatDau);
+
+        cout << "Ngay ket thuc du kien: ";
+        getline(cin, ngayKetThuc);
+
+        cout << "Ngan sach: ";
+        cin >> nganSach; 
+
+        do{
+         cout << "Ty le hoan thanh(0-100%): ";
+         cin >> tyLeHoanThanh;
+  } while (tyLeHoanThanh<0 || tyLeHoanThanh>100);
+    }
+
+    // Xuat thong tin mot du an
+    void xuat()
+    {
+        cout << "Ma du an: " << maDuAn << endl; 
+        cout << "Ten du an: " << tenDuAn << endl;
+        cout << "Ten khach hang: " << tenKhachHang << endl;
+        cout << "Ngay bat dau: " << ngayBatDau << endl;
+        cout << "Ngay ket thuc du kien: " << ngayKetThuc << endl;
+        cout << "Ngan sach: " << nganSach << endl;
+        cout << "Ty le hoan thanh: " << tyLeHoanThanh << "%" << endl; 
+    }
+};
+
+class DanhSachDuAn{
+private:
+    DuAn ds[200]; 
+    int n;
+
+public:
+    // Khoi tao danh sach
+    DanhSachDuAn(){
+        n=0;
+    }
+
+    // Nhap danh sach du an
+    void nhapDanhSach(){
+        do{
+            cout << "Nhap so luong du an (1 - 199): ";
+            cin >> n;
+        }
+        while (n<=0 || n>=200);
+
+        for (int i=0; i<n; i++){
+            cout << "\n===== NHAP DU AN THU " << i+1 << " =====\n";
+            ds[i].nhap();
+        }
+    }
+
+    // In danh sach du an
+    void xuatDanhSach(){
+        cout << "\n========== DANH SACH DU AN ==========\n";
+
+        for (int i=0; i<n; i++){
+            cout << "\n--- Du an thu " << i + 1 << " ---\n"; 
+            ds[i].xuat(); 
+        }
+    }
+
+   
+    

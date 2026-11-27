@@ -1,0 +1,50 @@
+// Ham main
+int main(){
+    DanhSachDuAn danhSach;
+    int luaChon;
+
+    do{
+        menu();
+        cin >> luaChon;
+
+        switch (luaChon){
+        case 1:
+            danhSach.nhapDanhSach();
+            break;
+
+        case 2:
+            danhSach.xuatDanhSach();
+            break;
+
+        case 3:
+            danhSach.sapXep();
+            danhSach.xuatDanhSach();
+            break;
+
+        case 4:
+            danhSach.timKiemTheoMa();
+            break;
+
+        case 5:
+            danhSach.timKiemTheoTen();
+            break;
+
+        case 6:
+            danhSach.them();
+            break;
+
+        case 7:
+            danhSach.xoa();
+            break;
+
+        case 0:
+            cout << "\nDa thoat chuong trinh!\n";
+            break;
+
+        default:
+            cout << "\nLua chon khong hop le! Vui long chon lai.\n";
+        }
+    }
+    while (luaChon != 0);
+    return 0;
+}
